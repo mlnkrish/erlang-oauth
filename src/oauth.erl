@@ -15,12 +15,6 @@
 
 -include_lib("public_key/include/public_key.hrl").
 
--ifndef(no_sha_hmac).
--define(SHA_HMAC(Key, Data), crypto:hmac(sha, Key, Data)).
--else.
--define(SHA_HMAC(Key, Data), crypto:sha_mac(Key, Data)).
--endif.
-
 get(URL, ExtraParams, Consumer) ->
   get(URL, ExtraParams, Consumer, "", "").
 
